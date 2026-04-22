@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "张三",
+      "email": "test@example.com",
+      "password": "123456",
+      "createdAt": "2024-01-15T08:00:00.000Z"
+    },
+    {
+      "id": 1776219117131,
+      "username": "long",
+      "email": "1907190594@qq.com",
+      "password": "123456",
+      "createdAt": "2026-04-15T02:11:57.131Z"
+    },
+    {
+      "id": 1776219193262,
+      "username": "lee",
+      "email": "123456@qq.com",
+      "password": "123456",
+      "createdAt": "2026-04-15T02:13:13.262Z"
+    },
+    {
+      "id": 1776394053245,
+      "username": "yee",
+      "email": "147258@qq.com",
+      "password": "123456",
+      "createdAt": "2026-04-17T02:47:33.245Z"
+    },
+    {
+      "id": 1776843412076,
+      "username": "1",
+      "email": "1@qq.com",
+      "password": "123456",
+      "createdAt": "2026-04-22T07:36:52.076Z"
+    }
+  ]
+}

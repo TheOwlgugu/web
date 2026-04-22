@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lab.dao.UserDao">
+
+    <!-- 结果映射 -->
+    <resultMap id="userMap" type="com.lab.entity.User">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+
+    <!-- 插入用户 -->
+    <insert id="insertUser" parameterType="com.lab.entity.User"
+            useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user (username, email, password)
+        VALUES (#{username}, #{email}, #{password})
+    </insert>
+
+    <!-- 根据邮箱查询用户 -->
+    <select id="findUserByEmail" parameterType="string" resultMap="userMap">
+        SELECT id, username, email, password, created_at, updated_at
+        FROM user
+        WHERE email = #{email}
+    </select>
+
+    <!-- 根据邮箱和密码查询用户（登录验证） -->
+    <select id="findUserByEmailAndPassword" resultMap="userMap">
+        SELECT id, username, email, password, created_at, updated_at
+        FROM user
+        WHERE email = #{email} AND password = #{password}
+    </select>
+
+    <!-- 检查邮箱是否存在 -->
+    <select id="checkEmailExists" parameterType="string" resultType="int">
+        SELECT COUNT(*) FROM user WHERE email = #{email}
+    </select>
+
+    <!-- 根据用户名查询用户 -->
+    <select id="findUserByUsername" parameterType="string" resultMap="userMap">
+        SELECT id, username, email, password, created_at, updated_at
+        FROM user
+        WHERE username = #{username}
+    </select>
+
+</mapper>

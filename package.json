@@ -1,0 +1,11 @@
+{
+    "name": "cloud-lab-vue",
+    "version": "2.0.0",
+    "description": "云端编程实验室 - Vue重构版",
+    "scripts": {
+        "server": "json-server db.json --config json-server.json --port 3000"
+    },
+    "dependencies": {
+        "json-server": "^0.17.4"
+    }
+}

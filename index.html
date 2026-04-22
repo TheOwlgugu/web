@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>云端编程实验室 | 边学边练</title>
+    <!-- Bootstrap 5 核心样式 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-custom">
+            <!-- 头部组件 -->
+            <app-header @show-login="showLoginModal = true" @show-register="showRegisterModal = true"></app-header>
+
+            <!-- 主视觉组件 -->
+            <app-hero @learn-now="handleLearnNow"></app-hero>
+
+            <div class="divider-light"></div>
+
+            <!-- 高级Web编程实验室组件 -->
+            <app-lab-section title="高级Web编程实验室" desc="每人拥有自己完全独立的编程实验室，内置所有基础软件及学习素材。打开浏览器，即刻开始编程！"
+                img-src="编程实验室图片.png" @learn-more="handleLearnMore">
+            </app-lab-section>
+
+            <div class="divider-light"></div>
+
+            <!-- 双屏学习组件 -->
+            <app-lab-section title="双屏学习" desc="双屏学习，小屏视频互动，大屏实际操作，学习无障碍。打开浏览器，即刻开始编程！" img-src="双屏学习图片.png"
+                @learn-more="handleLearnMore">
+            </app-lab-section>
+
+            <div class="divider-light"></div>
+
+            <!-- 课程特色组件 -->
+            <app-features @learn-now="handleLearnNow"></app-features>
+
+            <!-- 页脚组件 -->
+            <app-footer></app-footer>
+        </div>
+
+        <!-- 登录模态框 -->
+        <login-modal :visible="showLoginModal" @close="showLoginModal = false"></login-modal>
+
+        <!-- 注册模态框 -->
+        <register-modal :visible="showRegisterModal" @close="showRegisterModal = false"></register-modal>
+    </div>
+
+    <!-- 引入组件 -->
+    <script src="js/components/AppHeader.js"></script>
+    <script src="js/components/AppHero.js"></script>
+    <script src="js/components/LabSection.js"></script>
+    <script src="js/components/Features.js"></script>
+    <script src="js/components/AppFooter.js"></script>
+    <script src="js/components/LoginModal.js"></script>
+    <script src="js/components/RegisterModal.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
